@@ -18,5 +18,22 @@
     <ClCompile Include="Sim1200.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="..\server.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Socket.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DataToPc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DataFromPc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Socket.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
