@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include <string>
 #include <Winsock2.h>
 #include <WS2tcpip.h>
 
@@ -9,7 +10,7 @@
 class Socket
 {
 public:
-	Socket();
+	Socket(std::string div);
     ~Socket();
     bool create();
 	bool createNoBlock();

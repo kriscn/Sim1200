@@ -56,7 +56,7 @@ void sendData(Socket* c_socket) {
 }
 
 int main() {
-    Socket s_socket;
+    Socket s_socket("server");
     if (!s_socket.create()) {
         std::cout << "Failed to create socket" << std::endl;
         return false;
@@ -75,7 +75,7 @@ int main() {
     cout << "waiting for connect......" << endl;
 
     while (true) {
-        Socket c_socket;
+        Socket c_socket("client");
         sockaddr_in clientAddr;
         int length = sizeof(clientAddr);
         SOCKET clientSocket = accept(s_socket.getSocket(), (sockaddr*)&clientAddr, &length);
