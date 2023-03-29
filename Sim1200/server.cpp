@@ -9,8 +9,9 @@ using namespace std;
 
 void receiveData(Socket* c_socket) {
     while (true) {
-        char buff[1024];
-        int len = c_socket->receive(buff, sizeof(buff));
+        char receiveBuff[sizeof(DataFromPc)] = { 0 };
+        int len = c_socket->receive(receiveBuff, sizeof(receiveBuff));
+        //int len = c_socket->receive(buff, sizeof(buff));
         if (len == SOCKET_ERROR) { // 无数据可用
             int errCode = WSAGetLastError();
             if (errCode == WSAEWOULDBLOCK) { //没有可用数据
@@ -24,7 +25,8 @@ void receiveData(Socket* c_socket) {
             cout << "The socket has been closed by the client" << endl;
             break;
         }
-        // 处理接收到的数据
+        DataFromPc* dataFromPc = reinterpret_cast<DataFromPc*>(receiveBuff); //将 buffer 解析为结构体
+        std::cout << "dataFromPc  : " << dataFromPc << std::endl;
     }
 }
 
