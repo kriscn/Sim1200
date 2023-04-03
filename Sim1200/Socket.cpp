@@ -64,8 +64,8 @@ bool Socket::connect(const char* ip_address, int port) {
 bool Socket::send(const char* buffer, int length) {
 	try {
 		// 发送心跳包
-		static const char heartbeat[] = "H";
-		::send(m_socket, heartbeat, sizeof(heartbeat), 0);
+		//static const char heartbeat[] = "H";
+		//::send(m_socket, heartbeat, sizeof(heartbeat), 0);
 		// 发送原始数据
 		return ::send(m_socket, buffer, length, 0) != SOCKET_ERROR;
 	}
@@ -89,11 +89,11 @@ bool Socket::receive(char* buffer, int length) {
 			return false;
 		}
 		// 检查接收到的数据是否是心跳包
-		if (bytes_received == 1 && buffer[total_bytes_received] == 'H') {
-			// 接收到了心跳包
-			idle_time = 0;
-			continue;
-		}
+		//if (bytes_received == 1 && buffer[total_bytes_received] == 'H') {
+		//	// 接收到了心跳包
+		//	idle_time = 0;
+		//	continue;
+		//}
 
 		// 累计接收到的字节数
 		total_bytes_received += bytes_received;

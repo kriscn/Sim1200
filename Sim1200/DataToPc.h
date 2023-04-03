@@ -21,9 +21,9 @@ struct DataToPc {
     float SkyLiftX; //18
     float SkyLiftY; //19
     float SkyLiftZ; //20
-    float float22; //22-25
-    float float26; //26-29
-    float float30; //30-33
+    float IronPlateLength;  //22-25  // Ìú°åºñ¶È(IronPlateLength)
+    float IronPlateWidth;   //26-29  // Ìú°å¿í¶È(IronPlateWidth)
+    float IronPlateHeight;  //30-33  // Ìú°å¸ß¶È(IronPlateHeight)
     float float34; //34-37
     float float38; //38-41
     float float42; //42-45

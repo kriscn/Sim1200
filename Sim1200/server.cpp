@@ -37,9 +37,30 @@ void sendData(Socket* c_socket) {
 
         //发送数据格式
         DataToPc dataToPc = {
-            true, false, false, false, false, false, false, false,
-            true, false, false, false, false, false, false, false,
-            1.1f, 2.2f, 3.3f, 4.4f, 5.5f, 6.6f, 7.7f, 8.8f, 9.9f, 10.0f,11.1f
+            true,   // Ready
+            false,  // Error
+            false,  // 3
+            false,  // 4
+            false,  // 5
+            false,  // 6 
+            false,  // 7
+            false,  // 8
+            true,   // StartScan
+            false,  // 10
+            false,  // 11
+            false,  // 12
+            false,  // RebootPower
+            false,  // RebootCompleted
+            false,  // 15
+            false,  // 16
+            1.1f,   // Spare
+            2.2f,   // SkyLiftX
+            3.3f,   // SkyLiftY
+            4.4f,   // SkyLiftZ
+            3.8f,   // //22-25  // 铁板长度(IronPlateLength)
+            2.2f,   // //26-29  // 铁板宽度(IronPlateWidth)
+            0.2f,   // //30-33  // 铁板高度(IronPlateHeight)
+            8.8f, 9.9f, 10.0f,11.1f
         };
         // 将数据转换为字符数组
         char buffer[sizeof(DataToPc)];
